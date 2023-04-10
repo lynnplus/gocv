@@ -10,7 +10,9 @@
 !.idea/copyright/*
 .idea/**/dictionaries
 .idea/**/shelf
+.idea/.name
 
 # CMake
 cmake-build-*/
+example/bin
 

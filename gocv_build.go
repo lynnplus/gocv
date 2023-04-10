@@ -1,3 +1,5 @@
+//go:build !dynamic_stdcv && !custom_cv
+
 /*
  * Copyright (c) 2023 Lynn <lynnplus90@gmail.com>
  *
@@ -14,5 +16,7 @@
  * limitations under the License.
  */
 
-// Package gocv implements a basic opencv binding library.
 package gocv
+
+//#cgo !windows pkg-config: opencv4
+import "C"

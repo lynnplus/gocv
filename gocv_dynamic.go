@@ -1,3 +1,5 @@
+//go:build !dynamic_stdcv
+
 /*
  * Copyright (c) 2023 Lynn <lynnplus90@gmail.com>
  *
@@ -14,5 +16,6 @@
  * limitations under the License.
  */
 
-// Package gocv implements a basic opencv binding library.
 package gocv
+
+import _ "github.com/lynnplus/gocv/stdccv"
