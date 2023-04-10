@@ -22,25 +22,25 @@ import (
 )
 
 func main() {
-
 	img := cv.IMRead("example/bin/face_person.jpg")
 	if img == nil {
 		panic("image empty")
 	}
-
 	fmt.Println(img.Size())
 
 	win := cv.NewWindow()
 
-	cv.PutText(img, "text", cv.Point{X: 10, Y: 0},
-		cv.NewTextParams().Thickness(3))
+	pam := cv.NewTextParams().Thickness(3)
+
+	text := "text"
+	size, _ := cv.GetTextSize(text, pam)
+
+	cv.PutText(img, "text", cv.Point{X: 10, Y: size.Height}, pam)
 
 	win.ShowImageWithWaitKey(img, -1)
 
 	params := map[cv.IMWriteFlag]int{
 		cv.IMWriteJpegQuality: 10,
 	}
-
 	cv.IMWriteWithParams("example/bin/test.jpeg", img, params)
-
 }
